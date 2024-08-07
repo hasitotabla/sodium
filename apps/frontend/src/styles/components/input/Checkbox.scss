@@ -1,0 +1,35 @@
+$color-blue-600: "#4F46E5"; // Example value for theme("colors.blue.600")
+$color-gray-100: "#F3F4F6"; // Example value for theme("colors.gray.100")
+$color-gray-300: "#D1D5DB"; // Example value for theme("colors.gray.300")
+$color-blue-500: "#3B82F6"; // Example value for theme("colors.blue.500")
+$color-gray-800: "#1F2937"; // Example value for theme("colors.gray.800")
+$color-gray-700: "#374151"; // Example value for theme("colors.gray.700")
+$color-gray-600: "#4B5563"; // Example value for theme("colors.gray.600")
+
+input[type="checkbox"] {
+  width: 1rem; // w-4
+  height: 1rem; // h-4
+  color: red; // text-blue-600
+  background-color: $color-gray-100; // bg-gray-100
+  border-color: $color-gray-300; // border-gray-300
+  border-radius: 0.25rem; // Example value for theme("borderRadius.DEFAULT")
+
+  &:focus {
+    --ring-opacity: 1;
+    --ring-color: $color-blue-500;
+    --ring-offset-width: 2px;
+    --ring-offset-color: #fff;
+    --ring-width: 2px;
+    box-shadow: var(--ring-offset-shadow, 0 0 #0000), var(--ring-shadow, 0 0 #0000), var(--shadow, 0 0 #0000);
+  }
+
+  &.dark {
+    --ring-offset-color: $color-gray-800;
+    background-color: $color-gray-700; // dark:bg-gray-700
+    border-color: $color-gray-600; // dark:border-gray-600
+
+    &:focus {
+      --ring-color: $color-blue-600; // dark:focus:ring-blue-600
+    }
+  }
+}

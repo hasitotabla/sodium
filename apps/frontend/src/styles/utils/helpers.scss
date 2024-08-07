@@ -1,0 +1,53 @@
+// loop thru 1 to 30
+
+$multiplier: 3;
+
+@for $i from 1 through 15 {
+  .p-#{$i} {
+    padding: #{$i * $multiplier}px;
+  }
+  .pt-#{$i} {
+    padding-top: #{$i * $multiplier}px;
+  }
+  .pr-#{$i} {
+    padding-right: #{$i * $multiplier}px;
+  }
+  .pb-#{$i} {
+    padding-bottom: #{$i * $multiplier}px;
+  }
+  .pl-#{$i} {
+    padding-left: #{$i * $multiplier}px;
+  }
+  .px-#{$i} {
+    padding-left: #{$i * $multiplier}px;
+    padding-right: #{$i * $multiplier}px;
+  }
+  .py-#{$i} {
+    padding-top: #{$i * $multiplier}px;
+    padding-bottom: #{$i * $multiplier}px;
+  }
+
+  .m-#{$i} {
+    margin: #{$i * $multiplier}px;
+  }
+  .mt-#{$i} {
+    margin-top: #{$i * $multiplier}px;
+  }
+  .mr-#{$i} {
+    margin-right: #{$i * $multiplier}px;
+  }
+  .mb-#{$i} {
+    margin-bottom: #{$i * $multiplier}px;
+  }
+  .ml-#{$i} {
+    margin-left: #{$i * $multiplier}px;
+  }
+  .mx-#{$i} {
+    margin-left: #{$i * $multiplier}px;
+    margin-right: #{$i * $multiplier}px;
+  }
+  .my-#{$i} {
+    margin-top: #{$i * $multiplier}px;
+    margin-bottom: #{$i * $multiplier}px;
+  }
+}

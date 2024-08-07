@@ -1,0 +1,84 @@
+services:
+  sodium-backend:
+    container_name: sodium-backend
+    image: sodium-backend 
+    depends_on:
+      - sodium-database
+    env_file:
+      - .env
+    #ports:
+    #  - "6500:4500"
+    expose: 
+      - 4500
+    networks:
+      - shared-network
+      - proxy
+    volumes:
+      - ./uploads:/usr/src/apps/backend/uploads
+    build: 
+      context: ./apps/backend
+      dockerfile: Dockerfile
+      additional_contexts: 
+        packages: ./packages
+        apps-shared: ./apps/shared
+  sodium-frontend:
+    container_name: sodium-frontend
+    image: sodium-frontend
+    depends_on:
+      - sodium-backend
+    # env_file:
+    #   - .env
+    environment:
+      - SHARED_API_URL=${SHARED_API_URL}
+      - SHARED_APP_URL=${SHARED_APP_URL}
+      - SHARED_APP_TITLE=${SHARED_APP_TITLE}
+      - SHARED_DISPLAY_STATS=${SHARED_DISPLAY_STATS}
+      - SHARED_INVITE_ONLY=${SHARED_INVITE_ONLY}
+    #ports:
+    #  - "6565:5173"
+    expose:
+      - 5173
+    networks:
+      - shared-network
+      - proxy
+    build:
+      context: ./apps/frontend
+      dockerfile: Dockerfile
+      args:
+        - SHARED_API_URL=${SHARED_API_URL}
+        - SHARED_APP_URL=${SHARED_APP_URL}
+        - SHARED_APP_TITLE=${SHARED_APP_TITLE}
+        - SHARED_DISPLAY_STATS=${SHARED_DISPLAY_STATS}
+        - SHARED_INVITE_ONLY=${SHARED_INVITE_ONLY}
+      additional_contexts:
+        packages: ./packages
+        apps-shared: ./apps/shared      
+  sodium-database:
+    image: mariadb:latest
+    restart: unless-stopped
+    container_name: sodium-database
+    command: --default-authentication-plugin=mysql_native_password
+    env_file:
+      - .env
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_PASS}
+      MYSQL_DATABASE: ${DB_NAME}
+      MYSQL_USER: ${DB_USER}
+      MYSQL_PASSWORD: ${DB_PASS}
+    ports:
+      - "10.8.0.1:3309:3306"
+    expose:
+      - 3306
+    volumes:
+      - ./db:/var/lib/mysql
+    networks:
+      - shared-network
+
+volumes:
+  db:
+  uploads:
+
+networks:
+  shared-network:
+  proxy:
+    external: true

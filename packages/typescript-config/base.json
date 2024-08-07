@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "Default",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "$shared/*": ["../../apps/shared/src/*"],
+      "$root/*": ["../../*"]
+    }
+  }
+}

@@ -1,0 +1,16 @@
+a,
+.link {
+  text-decoration: none;
+  color: white;
+
+  font-size: 13px;
+  font-family: "Inter", sans-serif;
+
+  transition: color 100ms ease-out;
+
+  &:hover {
+    cursor: pointer;
+
+    color: #888888;
+  }
+}

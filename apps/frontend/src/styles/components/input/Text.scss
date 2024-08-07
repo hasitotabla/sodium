@@ -1,0 +1,33 @@
+input[type="text"],
+textarea,
+input[type="password"],
+input[type="number"] {
+  // width: 100%;
+  padding: 0.5rem;
+
+  border: 1px solid #222222;
+  border-radius: 8pt;
+
+  font-family: "Inter", sans-serif;
+
+  background: #111;
+
+  &:active,
+  &:focus {
+    outline: none;
+    border-color: #666666;
+  }
+
+  &[data-password="true"] > &:after {
+    content: "👁️";
+    position: absolute;
+    right: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+
+  &[data-password="true"] {
+    padding-right: 1.5rem;
+  }
+}
