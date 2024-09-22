@@ -1,6 +1,6 @@
 import axios, { type AxiosRequestConfig } from "axios";
 import { type ApiResponse } from "$shared/types/Axios";
-import { type IRequest } from "$shared/requests";
+import { type IRequest } from "$shared/Requests";
 import { ACCESS_TOKEN_EXPIRATION_IGNORED_URLS } from "src/consts";
 
 function isAccessTokenExpired() {

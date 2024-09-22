@@ -6,7 +6,7 @@
   import { showToast } from "$components/_partial/toast/_Toast";
   import { fetch } from "$lib/fetch";
   import { convertToFileSize } from "$shared/index";
-  import { type IRequest } from "$shared/requests";
+  import { type IRequest } from "$shared/Requests";
   import { convertFileSize } from "$lib/file";
 
   const PAGE_SIZES = [15, 30, 50, 100];
