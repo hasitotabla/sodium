@@ -23,7 +23,7 @@ import {
 } from './files.helper';
 import { FileSortBy, UserFiles } from '$shared/types/File';
 import { PermissionLevel } from '$shared/types/User';
-import { IRequest } from '$shared/requests';
+import { IRequest } from '$shared/Requests';
 import { UsersService } from 'src/users/users.service';
 
 @Injectable()

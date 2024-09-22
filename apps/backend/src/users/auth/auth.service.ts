@@ -7,7 +7,7 @@ import { InviteService } from 'src/invite/invite.service';
 import { InviteEntity } from 'src/invite/invite.entity';
 import { SettingsService } from 'src/settings/settings.service';
 import { TokenType } from '$shared/enums/Token';
-import { IRequest } from '$shared/requests';
+import { IRequest } from '$shared/Requests';
 
 const ACCESS_TOKEN_EXPIRATION = '15m';
 const REFRESH_TOKEN_EXPIRATION = '30d';

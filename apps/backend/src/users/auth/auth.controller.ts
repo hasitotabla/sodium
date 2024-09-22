@@ -23,7 +23,7 @@ import {
 } from './auth.dto';
 import { SharedUser } from '$shared/types/User';
 import { SettingsService } from 'src/settings/settings.service';
-import { IRequest } from '$shared/requests';
+import { IRequest } from '$shared/Requests';
 import { AuthGuard } from './auth.guard';
 import { User } from '../users.decorator';
 

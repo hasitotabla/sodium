@@ -24,7 +24,7 @@ import {
   UsersSearchQueryDTO,
   UsersUpdateUploadLimitDTO,
 } from './users.dto';
-import { IRequest } from '$shared/requests';
+import { IRequest } from '$shared/Requests';
 import { Response as Res } from 'express';
 import { setUserCSRFToken } from 'src/utilities/csrf';
 import { UsersFilesService } from 'src/files/services/users.service';

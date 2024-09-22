@@ -3,7 +3,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { FindOptionsWhere, Like, Repository } from 'typeorm';
 
 import { UserEntity } from './users.entity';
-import { IRequest } from '$shared/requests';
+import { IRequest } from '$shared/Requests';
 import { FileEntity } from 'src/files/files.entity';
 import { FilesService } from 'src/files/files.service';
 import { SettingsService } from 'src/settings/settings.service';

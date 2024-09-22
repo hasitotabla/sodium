@@ -26,7 +26,7 @@ import { UserEntity } from 'src/users/users.entity';
 import { ExtendedMulterFile } from './files.interface';
 import { generateRandomString } from 'src/utilities/string';
 import { UserFiles, type SharedFile } from '$shared/types/File';
-import { IRequest } from '$shared/requests';
+import { IRequest } from '$shared/Requests';
 import { PermissionLevel } from '$shared/types/User';
 import { FileSearchParamsDTO, FileUploadDTO } from './files.dto';
 import { generateFileChecksum } from './files.helper';
