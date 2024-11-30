@@ -20,7 +20,7 @@ cp -r .env.example .env
 nano .env
 # ... and set the env variables on your needs
 
-sudo docker compose up --build -d
+docker compose up --build -d
 ```
 
 ✨ And you're done! The website is running on `http://localhost:5173`!
@@ -118,7 +118,7 @@ sudo systemctl start nginx
 
 ```bash
 cd path/to/sodium
-sudo docker compose down
+docker compose down
 git pull
-sudo docker compose up --build -d
+docker compose up --build -d
 ```
